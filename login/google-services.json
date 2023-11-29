@@ -1,0 +1,49 @@
+{
+  "project_info": {
+    "project_number": "863036149596",
+    "firebase_url": "https://login-6bf13-default-rtdb.firebaseio.com",
+    "project_id": "login-6bf13",
+    "storage_bucket": "login-6bf13.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:863036149596:android:7d3921212666ae61b97b99",
+        "android_client_info": {
+          "package_name": "com.example.login"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAzBExrjQfKB6oTuGGYY-vG8FOYe8qCaqA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:863036149596:android:10b8629fc567e6b7b97b99",
+        "android_client_info": {
+          "package_name": "com.example.myapplication3"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAzBExrjQfKB6oTuGGYY-vG8FOYe8qCaqA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
