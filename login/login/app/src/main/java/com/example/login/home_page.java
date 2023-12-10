@@ -10,7 +10,7 @@ import android.view.View;
 
 public class home_page extends AppCompatActivity {
 
-    CardView uploadNotice,addGalleryImage;
+    CardView uploadNotice,addGalleryImage,addEbook;
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,6 +19,7 @@ public class home_page extends AppCompatActivity {
 
         uploadNotice = findViewById(R.id.addNotice);
         addGalleryImage = findViewById(R.id.addGalleryImage);
+        addEbook = findViewById(R.id.addEbook);
 
         uploadNotice.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -35,5 +36,13 @@ public class home_page extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        addEbook.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(home_page.this,UploadPdfActivity.class);
+                startActivity(intent);
+            }
+        });
+
     }
 }
