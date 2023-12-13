@@ -37,14 +37,11 @@ public class LoginActivity extends AppCompatActivity {
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                if(!validateUsername() | !validatePassword()){
-//
-//                }else{
-//                    checkUser();
-//                }
-                //just for check
-                Intent intent = new Intent(LoginActivity.this, home_page.class);
-                startActivity(intent);
+                if(!validateUsername() | !validatePassword()){
+
+                }else{
+                    checkUser();
+                }
             }
         });
         signupRedirectText.setOnClickListener(new View.OnClickListener() {
