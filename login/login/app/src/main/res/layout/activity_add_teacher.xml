@@ -12,7 +12,7 @@
         android:padding="16dp"
         android:orientation="vertical">
 
-        <de.hdodenhof.circleimageview.CircleImageView
+        <ImageView
             android:id="@+id/addTeacherImage"
             android:layout_width="120dp"
             android:layout_height="120dp"
