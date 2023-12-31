@@ -52,21 +52,21 @@ public class TeacherAdapter extends RecyclerView.Adapter<TeacherAdapter.TeacherV
             e.printStackTrace();
         }
 
-//        holder.update.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                //Toast.makeText(context, "Upload Teacher", Toast.LENGTH_SHORT).show();
-//
-//                Intent intent = new Intent(context, UpdateTeacherActivity.class);
-//                intent.putExtra("name", item.getName());
-//                intent.putExtra("email", item.getEmail());
-//                intent.putExtra("post", item.getPost());
-//                intent.putExtra("image", item.getImage());
-//
-//                context.startActivity(intent);
-//
-//            }
-//        });
+        holder.update.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //Toast.makeText(context, "Upload Teacher", Toast.LENGTH_SHORT).show();
+
+                Intent intent = new Intent(context, UpdateTeacherActivity.class);
+                intent.putExtra("name", item.getName());
+                intent.putExtra("email", item.getEmail());
+                intent.putExtra("post", item.getPost());
+                intent.putExtra("image", item.getImage());
+
+                context.startActivity(intent);
+
+            }
+        });
 
     }
 
