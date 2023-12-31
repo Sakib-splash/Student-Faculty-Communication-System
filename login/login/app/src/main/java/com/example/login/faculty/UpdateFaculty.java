@@ -125,7 +125,7 @@ public class UpdateFaculty extends AppCompatActivity {
                     }
                     cseDepartment.setHasFixedSize(true);
                     cseDepartment.setLayoutManager(new LinearLayoutManager(UpdateFaculty.this));
-                    adapter = new TeacherAdapter(list1, UpdateFaculty.this);
+                    adapter = new TeacherAdapter(list1, UpdateFaculty.this, "CSE");
                     cseDepartment.setAdapter(adapter);
                 }
             }
@@ -157,7 +157,7 @@ public class UpdateFaculty extends AppCompatActivity {
                     }
                     mathDepartment.setHasFixedSize(true);
                     mathDepartment.setLayoutManager(new LinearLayoutManager(UpdateFaculty.this));
-                    adapter = new TeacherAdapter(list2, UpdateFaculty.this);
+                    adapter = new TeacherAdapter(list2, UpdateFaculty.this, "Mathematics");
                     mathDepartment.setAdapter(adapter);
                 }
             }
@@ -189,7 +189,7 @@ public class UpdateFaculty extends AppCompatActivity {
                     }
                     englishDepartment.setHasFixedSize(true);
                     englishDepartment.setLayoutManager(new LinearLayoutManager(UpdateFaculty.this));
-                    adapter = new TeacherAdapter(list3, UpdateFaculty.this);
+                    adapter = new TeacherAdapter(list3, UpdateFaculty.this, "English");
                     englishDepartment.setAdapter(adapter);
                 }
             }
@@ -221,7 +221,7 @@ public class UpdateFaculty extends AppCompatActivity {
                     }
                     physicsDepartment.setHasFixedSize(true);
                     physicsDepartment.setLayoutManager(new LinearLayoutManager(UpdateFaculty.this));
-                    adapter = new TeacherAdapter(list4, UpdateFaculty.this);
+                    adapter = new TeacherAdapter(list4, UpdateFaculty.this, "Physics");
                     physicsDepartment.setAdapter(adapter);
                 }
             }
@@ -253,7 +253,7 @@ public class UpdateFaculty extends AppCompatActivity {
                     }
                     microbiologyDepartment.setHasFixedSize(true);
                     microbiologyDepartment.setLayoutManager(new LinearLayoutManager(UpdateFaculty.this));
-                    adapter = new TeacherAdapter(list5, UpdateFaculty.this);
+                    adapter = new TeacherAdapter(list5, UpdateFaculty.this, "Microbiology");
                     microbiologyDepartment.setAdapter(adapter);
                 }
             }
@@ -285,7 +285,7 @@ public class UpdateFaculty extends AppCompatActivity {
                     }
                     banglaDepartment.setHasFixedSize(true);
                     banglaDepartment.setLayoutManager(new LinearLayoutManager(UpdateFaculty.this));
-                    adapter = new TeacherAdapter(list6, UpdateFaculty.this);
+                    adapter = new TeacherAdapter(list6, UpdateFaculty.this, "Bangla");
                     banglaDepartment.setAdapter(adapter);
                 }
             }
@@ -317,7 +317,7 @@ public class UpdateFaculty extends AppCompatActivity {
                     }
                     psychologyDepartment.setHasFixedSize(true);
                     psychologyDepartment.setLayoutManager(new LinearLayoutManager(UpdateFaculty.this));
-                    adapter = new TeacherAdapter(list7, UpdateFaculty.this);
+                    adapter = new TeacherAdapter(list7, UpdateFaculty.this, "Psychology");
                     psychologyDepartment.setAdapter(adapter);
                 }
             }
@@ -349,7 +349,7 @@ public class UpdateFaculty extends AppCompatActivity {
                     }
                     chemistryDepartment.setHasFixedSize(true);
                     chemistryDepartment.setLayoutManager(new LinearLayoutManager(UpdateFaculty.this));
-                    adapter = new TeacherAdapter(list8, UpdateFaculty.this);
+                    adapter = new TeacherAdapter(list8, UpdateFaculty.this, "Chemistry");
                     chemistryDepartment.setAdapter(adapter);
                 }
             }
@@ -381,7 +381,7 @@ public class UpdateFaculty extends AppCompatActivity {
                     }
                     botanyDepartment.setHasFixedSize(true);
                     botanyDepartment.setLayoutManager(new LinearLayoutManager(UpdateFaculty.this));
-                    adapter = new TeacherAdapter(list9, UpdateFaculty.this);
+                    adapter = new TeacherAdapter(list9, UpdateFaculty.this, "Botany");
                     botanyDepartment.setAdapter(adapter);
                 }
             }
@@ -413,7 +413,7 @@ public class UpdateFaculty extends AppCompatActivity {
                     }
                     zoologyDepartment.setHasFixedSize(true);
                     zoologyDepartment.setLayoutManager(new LinearLayoutManager(UpdateFaculty.this));
-                    adapter = new TeacherAdapter(list10, UpdateFaculty.this);
+                    adapter = new TeacherAdapter(list10, UpdateFaculty.this, "Zoology");
                     zoologyDepartment.setAdapter(adapter);
                 }
             }
@@ -445,7 +445,7 @@ public class UpdateFaculty extends AppCompatActivity {
                     }
                     financeDepartment.setHasFixedSize(true);
                     financeDepartment.setLayoutManager(new LinearLayoutManager(UpdateFaculty.this));
-                    adapter = new TeacherAdapter(list11, UpdateFaculty.this);
+                    adapter = new TeacherAdapter(list11, UpdateFaculty.this, "Finance");
                     financeDepartment.setAdapter(adapter);
                 }
             }
@@ -477,7 +477,7 @@ public class UpdateFaculty extends AppCompatActivity {
                     }
                     accountingDepartment.setHasFixedSize(true);
                     accountingDepartment.setLayoutManager(new LinearLayoutManager(UpdateFaculty.this));
-                    adapter = new TeacherAdapter(list12, UpdateFaculty.this);
+                    adapter = new TeacherAdapter(list12, UpdateFaculty.this, "Accounting");
                     accountingDepartment.setAdapter(adapter);
                 }
             }
@@ -509,7 +509,7 @@ public class UpdateFaculty extends AppCompatActivity {
                     }
                     bbaDepartment.setHasFixedSize(true);
                     bbaDepartment.setLayoutManager(new LinearLayoutManager(UpdateFaculty.this));
-                    adapter = new TeacherAdapter(list13, UpdateFaculty.this);
+                    adapter = new TeacherAdapter(list13, UpdateFaculty.this, "BBA");
                     bbaDepartment.setAdapter(adapter);
                 }
             }
@@ -541,7 +541,7 @@ public class UpdateFaculty extends AppCompatActivity {
                     }
                     lawDepartment.setHasFixedSize(true);
                     lawDepartment.setLayoutManager(new LinearLayoutManager(UpdateFaculty.this));
-                    adapter = new TeacherAdapter(list14, UpdateFaculty.this);
+                    adapter = new TeacherAdapter(list14, UpdateFaculty.this, "Law");
                     lawDepartment.setAdapter(adapter);
                 }
             }
@@ -573,7 +573,7 @@ public class UpdateFaculty extends AppCompatActivity {
                     }
                     historyDepartment.setHasFixedSize(true);
                     historyDepartment.setLayoutManager(new LinearLayoutManager(UpdateFaculty.this));
-                    adapter = new TeacherAdapter(list15, UpdateFaculty.this);
+                    adapter = new TeacherAdapter(list15, UpdateFaculty.this, "History");
                     historyDepartment.setAdapter(adapter);
                 }
             }
@@ -605,7 +605,7 @@ public class UpdateFaculty extends AppCompatActivity {
                     }
                     socialworkDepartment.setHasFixedSize(true);
                     socialworkDepartment.setLayoutManager(new LinearLayoutManager(UpdateFaculty.this));
-                    adapter = new TeacherAdapter(list16, UpdateFaculty.this);
+                    adapter = new TeacherAdapter(list16, UpdateFaculty.this, "Social Work");
                     socialworkDepartment.setAdapter(adapter);
                 }
             }
@@ -637,7 +637,7 @@ public class UpdateFaculty extends AppCompatActivity {
                     }
                     ierDepartment.setHasFixedSize(true);
                     ierDepartment.setLayoutManager(new LinearLayoutManager(UpdateFaculty.this));
-                    adapter = new TeacherAdapter(list17, UpdateFaculty.this);
+                    adapter = new TeacherAdapter(list17, UpdateFaculty.this, "IER");
                     ierDepartment.setAdapter(adapter);
                 }
             }
