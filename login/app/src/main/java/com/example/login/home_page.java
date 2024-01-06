@@ -8,9 +8,13 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import com.example.login.faculty.UpdateFaculty;
+import com.example.login.notice.DeleteNoticeActivity;
+import com.example.login.notice.UploadNotice;
+
 public class home_page extends AppCompatActivity {
 
-    CardView uploadNotice,addGalleryImage,addEbook;
+    CardView uploadNotice,addGalleryImage,addEbook, faculty, deleteNotice;
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,11 +24,13 @@ public class home_page extends AppCompatActivity {
         uploadNotice = findViewById(R.id.addNotice);
         addGalleryImage = findViewById(R.id.addGalleryImage);
         addEbook = findViewById(R.id.addEbook);
+        faculty = findViewById(R.id.faculty);
+        deleteNotice = findViewById(R.id.deleteNotice);
 
         uploadNotice.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(home_page.this,UploadNotice.class);
+                Intent intent = new Intent(home_page.this, UploadNotice.class);
                 startActivity(intent);
             }
         });
@@ -40,6 +46,20 @@ public class home_page extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(home_page.this,UploadPdfActivity.class);
+                startActivity(intent);
+            }
+        });
+        faculty.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(home_page.this, UpdateFaculty.class);
+                startActivity(intent);
+            }
+        });
+        deleteNotice.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(home_page.this, DeleteNoticeActivity.class);
                 startActivity(intent);
             }
         });
