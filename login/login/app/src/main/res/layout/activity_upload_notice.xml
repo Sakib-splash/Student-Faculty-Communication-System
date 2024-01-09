@@ -6,7 +6,7 @@
     android:padding="16dp"
     android:layout_height="match_parent"
     android:background="@drawable/bg"
-    tools:context=".UploadNotice">
+    tools:context=".notice.UploadNotice">
 
     <LinearLayout
         android:layout_width="match_parent"

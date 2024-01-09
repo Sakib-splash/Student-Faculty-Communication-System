@@ -28,11 +28,12 @@ public class Welcome extends AppCompatActivity {
 
         Faculty.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(Welcome.this,LoginActivity.class);
+            public void onClick(View view) {
+                Intent intent = new Intent(Welcome.this, UserActivity.class);
                 startActivity(intent);
             }
         });
+
 
     }
 }
