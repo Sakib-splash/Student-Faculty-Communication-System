@@ -7,7 +7,7 @@
     android:orientation="vertical"
     android:gravity="center"
     android:background="@drawable/bg"
-    tools:context=".Welcome">
+    tools:context=".LoginActivity">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
@@ -27,7 +27,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Welcome"
+                android:text="Login"
                 android:textSize="36sp"
                 android:textAlignment="center"
                 android:textStyle="bold"
@@ -35,37 +35,36 @@
 
 
 
-            <TextView
+            <EditText
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:id="@+id/welcome_page"
+                android:id="@+id/login_username"
                 android:background="@drawable/lavender_border"
                 android:layout_marginTop="40dp"
                 android:padding="8dp"
-                android:text="Please, Select your Catagory!"
-                android:textAlignment="center"
-                android:textStyle="bold"
-                android:textSize="19sp"
+                android:hint="Username"
+                android:drawableLeft="@drawable/baseline_person_pin_24"
+                android:drawablePadding="8dp"
+                android:textColor="@color/black"/>
 
-
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:id="@+id/login_password"
+                android:background="@drawable/lavender_border"
+                android:layout_marginTop="20dp"
+                android:padding="8dp"
+                android:inputType="textPassword"
+                android:hint="Student ID"
+                android:drawableLeft="@drawable/baseline_lock_24"
                 android:drawablePadding="8dp"
                 android:textColor="@color/black"/>
 
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
-                android:text="Faculty"
-                android:id="@+id/student_button"
-                android:textSize="18sp"
-                android:layout_marginTop="30dp"
-                app:cornerRadius = "20dp"/>
-
-
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:text="Student"
-                android:id="@+id/faculty_button"
+                android:text="Submit"
+                android:id="@+id/login_button"
                 android:textSize="18sp"
                 android:layout_marginTop="30dp"
                 app:cornerRadius = "20dp"/>

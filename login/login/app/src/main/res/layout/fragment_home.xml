@@ -21,9 +21,10 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="The GPA tale"
+                android:text="The JNU TALE"
                 android:layout_marginTop="36dp"
                 android:textSize="@dimen/title_size"
+
                 android:layout_gravity="center_horizontal"
                 android:textColor="@color/textColor"
                 android:fontFamily="@string/bold"/>
