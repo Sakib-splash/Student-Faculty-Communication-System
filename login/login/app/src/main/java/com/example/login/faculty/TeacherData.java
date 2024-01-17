@@ -43,7 +43,7 @@ public class TeacherData {
         return image;
     }
 
-    public void setImage(String image) {
+    public void setImage(String image)   {
         this.image = image;
     }
 

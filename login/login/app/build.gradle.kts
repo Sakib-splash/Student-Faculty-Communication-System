@@ -31,7 +31,12 @@ android {
 
 dependencies {
 
-    implementation("androidx.appcompat:appcompat:1.6.1")
+
+
+    //noinspection GradleCompatible,GradleCompatible,GradleCompatible,GradleCompatible
+    implementation("androidx.appcompat:appcompat-resources:1.6.1")
+    // For loading and tinting drawables on older versions of the platform
+    implementation("androidx.appcompat:appcompat-resources:1.6.1")
     implementation("com.google.android.material:material:1.10.0")
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
     implementation("com.google.firebase:firebase-database:20.3.0")
@@ -60,6 +65,19 @@ dependencies {
     // Jetpack Compose Integration
     implementation("androidx.navigation:navigation-compose:$nav_version")
 
+
+
+    // FirebaseUI for Firebase Realtime Database
+    implementation ("com.firebaseui:firebase-ui-database:8.0.2")
+
+    // FirebaseUI for Cloud Firestore
+    implementation ("com.firebaseui:firebase-ui-firestore:8.0.2")
+
+    // FirebaseUI for Firebase Auth
+    implementation ("com.firebaseui:firebase-ui-auth:8.0.2")
+
+    // FirebaseUI for Cloud Storage
+    implementation ("com.firebaseui:firebase-ui-storage:8.0.2")
 
 
 }

@@ -16,6 +16,9 @@
         android:theme="@style/Theme.Login"
         tools:targetApi="31">
         <activity
+            android:name=".FacultyCourses"
+            android:exported="false" />
+        <activity
             android:name=".Faculty_home"
             android:exported="false" />
         <activity

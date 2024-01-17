@@ -14,7 +14,7 @@ import com.example.login.notice.UploadNotice;
 
 public class home_page extends AppCompatActivity {
 
-    CardView uploadNotice,addGalleryImage,addEbook, faculty, deleteNotice,create_course;
+    CardView uploadNotice,addGalleryImage,addEbook, faculty, deleteNotice,create_course,my_courses;
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +27,8 @@ public class home_page extends AppCompatActivity {
         faculty = findViewById(R.id.faculty);
         deleteNotice = findViewById(R.id.deleteNotice);
         create_course = findViewById(R.id.create_course);
+        my_courses = findViewById(R.id.my_courses);
+
 
 
         uploadNotice.setOnClickListener(new View.OnClickListener() {
@@ -70,6 +72,14 @@ public class home_page extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(home_page.this, Create_Course.class);
+                startActivity(intent);
+            }
+        });
+
+        my_courses.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(home_page.this, FacultyCourses.class);
                 startActivity(intent);
             }
         });
