@@ -8,6 +8,7 @@ import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.NavigationUI;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.Toast;
@@ -68,6 +69,8 @@ public class UserActivity extends AppCompatActivity implements NavigationView.On
         if (itemId == R.id.navigation_developer) {
             Toast.makeText(this, "Developer", Toast.LENGTH_SHORT).show();
         } else if (itemId == R.id.navigation_video) {
+            Intent intent = new Intent(UserActivity.this, FacultyCourses.class);
+            startActivity(intent);
             Toast.makeText(this, "Video Lecture", Toast.LENGTH_SHORT).show();
         } else if (itemId == R.id.navigation_rate) {
             Toast.makeText(this, "Rate Us", Toast.LENGTH_SHORT).show();

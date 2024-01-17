@@ -23,7 +23,7 @@
 
 
     <fragment android:id="@+id/navigation_gallery"
-        android:name="com.example.login.ui.gallery.GalleryFragment"
+        android:name="com.example.login.ui.EnrollCourses.GalleryFragment"
         android:label="Gallery"
         tools:layout="@layout/fragment_gallery"/>
 

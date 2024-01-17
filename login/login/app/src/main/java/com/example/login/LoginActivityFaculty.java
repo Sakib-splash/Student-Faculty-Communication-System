@@ -19,7 +19,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.Objects;
 
-public class LoginActivity extends AppCompatActivity {
+public class LoginActivityFaculty extends AppCompatActivity {
 
     EditText loginUsername, loginPassword;
     Button loginButton;
@@ -47,7 +47,7 @@ public class LoginActivity extends AppCompatActivity {
         signupRedirectText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(LoginActivity.this, SignupActivity.class);
+                Intent intent = new Intent(LoginActivityFaculty.this, SignupActivity.class);
                 startActivity(intent);
             }
         });
@@ -81,7 +81,7 @@ public class LoginActivity extends AppCompatActivity {
         String userUsername = loginUsername.getText().toString().trim();
         String userPassword = loginPassword.getText().toString().trim();
 
-        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("users");
+        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("faculty");
         Query checkUserDatabase = reference.orderByChild("username").equalTo(userUsername);
 
         checkUserDatabase.addListenerForSingleValueEvent(new ValueEventListener() {
@@ -94,7 +94,7 @@ public class LoginActivity extends AppCompatActivity {
 
                     if(!Objects.equals(passwordFromDB, userPassword)){
                         loginUsername.setError(null);
-                        Intent intent = new Intent(LoginActivity.this, UserActivity.class);
+                        Intent intent = new Intent(LoginActivityFaculty.this, home_page.class);
                         startActivity(intent);
                     }else{
                         loginPassword.setError("Invalid Credentials!");

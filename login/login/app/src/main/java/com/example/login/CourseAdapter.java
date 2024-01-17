@@ -97,7 +97,7 @@ import java.util.List;
         return new myViewHolder(view);
     }
 
-    class myViewHolder extends RecyclerView.ViewHolder{
+    public class myViewHolder extends RecyclerView.ViewHolder{
             TextView course_name, for_batch, course_code;
 
             public myViewHolder(@NonNull View itemView) {
