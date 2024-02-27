@@ -27,6 +27,7 @@ public class DeleteNoticeActivity extends AppCompatActivity {
     private ArrayList<NoticeData> list;
     private NoticeAdapter adapter;
     private DatabaseReference reference;
+     String currentCourseName = getIntent().getStringExtra("courseName");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +37,7 @@ public class DeleteNoticeActivity extends AppCompatActivity {
         deleteNoticeRecycler = findViewById(R.id.deleteNoticeRecycler);
         progressBar = findViewById(R.id.progressBar);
 
+        //reference = FirebaseDatabase.getInstance().getReference().child("Notice");
         reference = FirebaseDatabase.getInstance().getReference().child("Notice");
 
         deleteNoticeRecycler.setLayoutManager(new LinearLayoutManager(this));

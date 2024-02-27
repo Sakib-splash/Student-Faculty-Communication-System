@@ -67,7 +67,9 @@ public class UserActivity extends AppCompatActivity implements NavigationView.On
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         int itemId= item.getItemId();
         if (itemId == R.id.navigation_developer) {
-            Toast.makeText(this, "Developer", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(UserActivity.this, Welcome.class);
+            startActivity(intent);
+            Toast.makeText(this, "Log out Sucessfull", Toast.LENGTH_SHORT).show();
         } else if (itemId == R.id.navigation_video) {
             Intent intent = new Intent(UserActivity.this, EnrollCourse.class);
             startActivity(intent);

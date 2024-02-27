@@ -150,7 +150,7 @@ public class UploadNotice extends AppCompatActivity {
         String time = currentTime.format(calForTime.getTime());
         NoticeData noticeData = new NoticeData(title, downloadUrl, date, time, uniqueKey);
 
-        dbRef.child(uniqueKey).setValue(noticeData).addOnSuccessListener(new OnSuccessListener<Void>() {
+        dbRef.child("Notice").child(uniqueKey).setValue(noticeData).addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override
             public void onSuccess(Void aVoid) {
                 pd.dismiss();

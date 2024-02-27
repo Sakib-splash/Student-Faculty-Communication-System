@@ -96,11 +96,41 @@ public class UploadPdfActivity extends AppCompatActivity {
 
     }
 
+//    private void uploadPdf() {
+//        pd.setTitle("Please wait...");
+//        pd.setMessage("Uploading pdf");
+//        pd.show();
+//        String currentCourseName = getIntent().getStringExtra("courseName");
+//        StorageReference reference = storageReference.child("pdf/"+ pdfName+"-"+System.currentTimeMillis()+".pdf");
+//        reference.putFile(pdfData)
+//                .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+//                    @Override
+//                    public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+//                        Task<Uri> uriTask = taskSnapshot.getStorage().getDownloadUrl();
+//                        while (!uriTask.isComplete());
+//                        Uri uri = uriTask.getResult();
+//                        uploadData(String.valueOf(uri));
+//                    }
+//                }).addOnFailureListener(new OnFailureListener() {
+//                    @Override
+//                    public void onFailure(@NonNull Exception e) {
+//                        pd.dismiss();
+//                        Toast.makeText(UploadPdfActivity.this, "Something Went Wrong", Toast.LENGTH_SHORT).show();
+//                    }
+//                });
+//    }
+
     private void uploadPdf() {
         pd.setTitle("Please wait...");
         pd.setMessage("Uploading pdf");
         pd.show();
-        StorageReference reference = storageReference.child("pdf/"+ pdfName+"-"+System.currentTimeMillis()+".pdf");
+
+        String currentCourseName = getIntent().getStringExtra("courseName");
+
+        // Update the StorageReference to include the current course name in the path
+        StorageReference reference = storageReference.child("Classes").child(currentCourseName)
+                .child("pdf/" + pdfName + "-" + System.currentTimeMillis() + ".pdf");
+
         reference.putFile(pdfData)
                 .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                     @Override
@@ -119,32 +149,68 @@ public class UploadPdfActivity extends AppCompatActivity {
                 });
     }
 
-    private void uploadData(String valueOf) {
-        String uniqueKey = databaseReference.child("pdf").push().getKey();
+//    private void uploadData(String valueOf) {
+//        String uniqueKey = databaseReference.child("pdf").push().getKey();
+//
+//        HashMap data = new HashMap();
+//        data.put("pdfTitle",title);
+//        data.put("pdfUrl",downloadUrl);
+//
+//        databaseReference.child("pdf").child(uniqueKey).setValue(data).addOnCompleteListener(new OnCompleteListener<Void>() {
+//            @Override
+//            public void onComplete(@NonNull Task<Void> task) {
+//                pd.dismiss();
+//                Toast.makeText(UploadPdfActivity.this, "Pdf Uploaded Successfully", Toast.LENGTH_SHORT).show();
+//                pdfTitle.setText("");
+//            }
+//        }).addOnFailureListener(new OnFailureListener() {
+//            @Override
+//            public void onFailure(@NonNull Exception e) {
+//                pd.dismiss();
+//                Toast.makeText(UploadPdfActivity.this, "Failed to Upload Pdf", Toast.LENGTH_SHORT).show();
+//            }
+//        });
+//    }
 
-        HashMap data = new HashMap();
-        data.put("pdfTitle",title);
-        data.put("pdfUrl",downloadUrl);
+//    private void openGallery() {
+//        Intent intent = new Intent();
+//        intent.setType("pdf/docs/ppt");
+//        intent.setAction(Intent.ACTION_GET_CONTENT);
+//        startActivityForResult(Intent.createChooser(intent, "Select Pdf File"), REQ);
+//    }
 
-        databaseReference.child("pdf").child(uniqueKey).setValue(data).addOnCompleteListener(new OnCompleteListener<Void>() {
-            @Override
-            public void onComplete(@NonNull Task<Void> task) {
-                pd.dismiss();
-                Toast.makeText(UploadPdfActivity.this, "Pdf Uploaded Successfully", Toast.LENGTH_SHORT).show();
-                pdfTitle.setText("");
-            }
-        }).addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception e) {
-                pd.dismiss();
-                Toast.makeText(UploadPdfActivity.this, "Failed to Upload Pdf", Toast.LENGTH_SHORT).show();
-            }
-        });
+    private void uploadData(String pdfUrl) {
+        String currentCourseName = getIntent().getStringExtra("courseName");
+
+        // Create a unique key for the PDF data under the current course name
+        String uniqueKey = databaseReference.child("Classes").child(currentCourseName).push().getKey();
+
+        HashMap<String, Object> data = new HashMap<>();
+        data.put("pdfTitle", title);
+        data.put("pdfUrl", pdfUrl);
+
+        // Store the PDF data under the current course name in the "Classes" node
+        databaseReference.child("Classes").child(currentCourseName).child(uniqueKey).setValue(data)
+                .addOnCompleteListener(new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        pd.dismiss();
+                        Toast.makeText(UploadPdfActivity.this, "Pdf Uploaded Successfully", Toast.LENGTH_SHORT).show();
+                        pdfTitle.setText("");
+                    }
+                }).addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        pd.dismiss();
+                        Toast.makeText(UploadPdfActivity.this, "Failed to Upload Pdf", Toast.LENGTH_SHORT).show();
+                    }
+                });
     }
+
 
     private void openGallery() {
         Intent intent = new Intent();
-        intent.setType("pdf/docs/ppt");
+        intent.setType("application/pdf");
         intent.setAction(Intent.ACTION_GET_CONTENT);
         startActivityForResult(Intent.createChooser(intent, "Select Pdf File"), REQ);
     }

@@ -6,7 +6,7 @@
         android:icon="@drawable/ic_video"/>
 
     <item android:id="@+id/navigation_ebook"
-        android:title="Ebooks"
+        android:title="New Enrollment"
         android:icon="@drawable/ic_ebook"/>
 
     <item android:id="@+id/navigation_theme"
@@ -26,7 +26,7 @@
         android:icon="@drawable/ic_review"/>
 
     <item android:id="@+id/navigation_developer"
-        android:title="Developers"
+        android:title="Logout"
         android:icon="@drawable/ic_developer"/>
 
 </menu>

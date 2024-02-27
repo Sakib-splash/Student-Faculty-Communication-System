@@ -50,7 +50,9 @@ public class Create_Course extends AppCompatActivity {
                 reference.child(course_name).setValue(courseHelper);
 
                 Toast.makeText(Create_Course.this, "Course Create Successfully!", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(Create_Course.this, home_page.class);
 
+                startActivity(intent);
 
 
             }
