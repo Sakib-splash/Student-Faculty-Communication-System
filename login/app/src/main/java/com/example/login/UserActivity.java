@@ -75,7 +75,9 @@ public class UserActivity extends AppCompatActivity implements NavigationView.On
         } else if (itemId == R.id.navigation_rate) {
             Toast.makeText(this, "Rate Us", Toast.LENGTH_SHORT).show();
         } else if (itemId == R.id.navigation_ebook) {
-            Toast.makeText(this, "Ebooks", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(UserActivity.this, SearchActivity.class);
+            startActivity(intent);
+            Toast.makeText(this, "Searching Courses", Toast.LENGTH_SHORT).show();
         } else if (itemId == R.id.navigation_theme) {
             Toast.makeText(this, "Theme", Toast.LENGTH_SHORT).show();
         } else if (itemId == R.id.navigation_website) {

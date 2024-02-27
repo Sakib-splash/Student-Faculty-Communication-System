@@ -15,10 +15,4 @@
     <color name="red2">#FF0000</color>
     <color name="lightGray">#c1c1c1</color>
     <color name="blue">#0000FF</color>
-
-    <color name="titleColor">#1b272c</color>
-    <color name="grey">#828080</color>
-    <color name="grey1">#4f4f4f</color>
-    <color name="grey2">#d6d6d6</color>
-    <color name="darkColor">#313131</color>
 </resources>

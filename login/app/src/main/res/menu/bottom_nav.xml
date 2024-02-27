@@ -9,9 +9,9 @@
         android:icon="@drawable/ic_newsfeed"
         android:title="Notice"/>
 
-    <item android:id="@+id/navigation_gallery"
-        android:icon="@drawable/ic_gallery1"
-        android:title="Gallery"/>
+<!--    <item android:id="@+id/navigation_gallery"-->
+<!--        android:icon="@drawable/ic_gallery1"-->
+<!--        android:title="Gallery"/>-->
 
     <item android:id="@+id/navigation_faculty"
         android:icon="@drawable/ic_faculty"
