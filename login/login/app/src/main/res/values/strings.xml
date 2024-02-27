@@ -1,3 +1,14 @@
-<resources>
-    <string name="app_name">login</string>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">Student Faculty Communication Protocol</string>
+
+    <string name="bold" tools:ignore="ReferenceType">@font/latobold</string>
+    <string name="regular" tools:ignore="ReferenceType">@font/latoregular</string>
+    <string name="light" tools:ignore="ReferenceType">@font/latolight</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="start">Start</string>
+    <string name="close">Close</string>
+    <string name="about_varsity">Jagannath University has 36 departments under seven faculties and two Institutes. Every department follows the semester system. As of November 2020 there are 960 teachers and 19,088 students in Honours, Masters, M.Phil. and PhD programmes.</string>
+
+
 </resources>

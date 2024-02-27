@@ -34,7 +34,7 @@ public class GalleryAdapter extends RecyclerView.Adapter<GalleryAdapter.GalleryV
     }
 
     @Override
-    public void onBindViewHolder(@NonNull GalleryAdapter.GalleryViewAdapter holder, int position) {
+    public void onBindViewHolder(@NonNull GalleryViewAdapter holder, int position) {
         Picasso.get().load(images.get(position)).into(holder.imageView);
     }
 

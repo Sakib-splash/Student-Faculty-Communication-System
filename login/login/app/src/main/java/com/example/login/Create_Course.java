@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -18,7 +19,7 @@ public class Create_Course extends AppCompatActivity {
     Button createButton;
     FirebaseDatabase database;
     DatabaseReference reference;
-
+    FirebaseAuth firebaseAuth;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,6 +30,7 @@ public class Create_Course extends AppCompatActivity {
         Course_code=findViewById(R.id.course_code);
         createButton = findViewById(R.id.create_button);
 
+        firebaseAuth = FirebaseAuth.getInstance();
         createButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -40,14 +42,16 @@ public class Create_Course extends AppCompatActivity {
                 String course_code = Course_code.getText().toString();
 
 
-                CourseData courseHelper = new CourseData(course_name, for_batch, course_code);
+                //this section usedfor finding the login user
+
+                String userId = firebaseAuth.getCurrentUser().getUid();
+
+                CourseData courseHelper = new CourseData(course_name, for_batch, course_code,userId);
                 reference.child(course_name).setValue(courseHelper);
 
                 Toast.makeText(Create_Course.this, "Course Create Successfully!", Toast.LENGTH_SHORT).show();
 
-                // this willredirect anywhere from create section
-//                Intent intent = new Intent(SignupActivity.this, LoginActivity.class);
-//                startActivity(intent);
+
 
             }
         });

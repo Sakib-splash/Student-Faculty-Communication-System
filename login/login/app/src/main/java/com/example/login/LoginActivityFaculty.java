@@ -10,6 +10,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -24,6 +28,8 @@ public class LoginActivityFaculty extends AppCompatActivity {
     EditText loginUsername, loginPassword;
     Button loginButton;
     TextView signupRedirectText;
+
+    FirebaseAuth firebaseAuth;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,14 +40,21 @@ public class LoginActivityFaculty extends AppCompatActivity {
         signupRedirectText = findViewById(R.id.signupRedirectText);
         loginButton = findViewById(R.id.login_button);
 
+        firebaseAuth = FirebaseAuth.getInstance();
+
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(!validateUsername() | !validatePassword()){
+//                if(!validateUsername() | !validatePassword()){
+//
+//                }else{
+//                    checkUser();
+//                }
 
-                }else{
-                    checkUser();
-                }
+                String email = loginUsername.getText().toString().trim();
+                String password = loginPassword.getText().toString().trim();
+
+                loginUser(email, password);
             }
         });
         signupRedirectText.setOnClickListener(new View.OnClickListener() {
@@ -53,6 +66,22 @@ public class LoginActivityFaculty extends AppCompatActivity {
         });
 
     }
+
+    private void loginUser(String email, String password) {
+
+        firebaseAuth.signInWithEmailAndPassword(email,password).addOnCompleteListener(this, new OnCompleteListener() {
+            @Override
+            public void onComplete(@NonNull Task task) {
+                if (task.isSuccessful()){
+                    Intent intent = new Intent(LoginActivityFaculty.this, home_page.class);
+                    startActivity(intent);
+                    finish();
+                }
+            }
+        });
+
+    }
+
     public Boolean validateUsername(){
         String val = loginUsername.getText().toString();
         if(val.isEmpty()){
@@ -81,7 +110,7 @@ public class LoginActivityFaculty extends AppCompatActivity {
         String userUsername = loginUsername.getText().toString().trim();
         String userPassword = loginPassword.getText().toString().trim();
 
-        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("faculty");
+        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Faculty");
         Query checkUserDatabase = reference.orderByChild("username").equalTo(userUsername);
 
         checkUserDatabase.addListenerForSingleValueEvent(new ValueEventListener() {
@@ -94,7 +123,7 @@ public class LoginActivityFaculty extends AppCompatActivity {
 
                     if(!Objects.equals(passwordFromDB, userPassword)){
                         loginUsername.setError(null);
-                        Intent intent = new Intent(LoginActivityFaculty.this, home_page.class);
+                        Intent intent = new Intent(LoginActivityFaculty.this, UserActivity.class);
                         startActivity(intent);
                     }else{
                         loginPassword.setError("Invalid Credentials!");

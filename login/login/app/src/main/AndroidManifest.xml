@@ -16,7 +16,58 @@
         android:theme="@style/Theme.Login"
         tools:targetApi="31">
         <activity
-            android:name=".WelcomePage"
+            android:name=".UploadOnCourse"
+            android:exported="false" />
+        <activity
+            android:name=".EnrollRequest"
+            android:exported="false" />
+        <activity
+            android:name=".EnrollCourse"
+            android:exported="false" />
+        <activity
+            android:name=".RequestPermission"
+            android:exported="false" />
+        <activity
+            android:name=".LoginActivityFaculty"
+            android:exported="false" />
+        <activity
+            android:name=".FacultyCourses"
+            android:exported="false" />
+        <activity
+            android:name=".Faculty_home"
+            android:exported="false" />
+        <activity
+            android:name=".Create_Course"
+            android:exported="false" />
+        <activity
+            android:name=".UserActivity"
+            android:exported="false" />
+        <activity
+            android:name=".notice.DeleteNoticeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".faculty.UpdateTeacherActivity"
+            android:exported="false" />
+        <activity
+            android:name=".faculty.UpdateFaculty"
+            android:exported="false" />
+        <activity
+            android:name=".faculty.AddTeacher"
+            android:exported="false" />
+        <activity
+            android:name=".AddTeacher"
+            android:exported="false" />
+        <activity
+            android:name=".UploadPdfActivity"
+            android:exported="false" />
+        <activity
+            android:name=".UploadImage"
+            android:exported="false" />
+        <activity
+            android:name=".notice.UploadNotice"
+            android:exported="false" />
+        <activity
+            android:name=".Welcome"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -25,22 +76,15 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".UploadPdfActivity"
-            android:exported="false" />
-        <activity
-            android:name=".UploadImage"
-            android:exported="false" />
-        <activity
-            android:name=".UploadNotice"
-            android:exported="false" />
-        <activity
             android:name=".LoginActivity"
             android:exported="false">
-<!--            <intent-filter>-->
-<!--                <action android:name="android.intent.action.MAIN" />-->
 
-<!--                <category android:name="android.intent.category.LAUNCHER" />-->
-<!--            </intent-filter>-->
+            <!-- <intent-filter> -->
+            <!-- <action android:name="android.intent.action.MAIN" /> -->
+
+
+            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+            <!-- </intent-filter> -->
         </activity>
         <activity
             android:name=".SignupActivity"

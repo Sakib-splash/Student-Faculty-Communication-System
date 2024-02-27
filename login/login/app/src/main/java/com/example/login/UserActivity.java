@@ -69,9 +69,9 @@ public class UserActivity extends AppCompatActivity implements NavigationView.On
         if (itemId == R.id.navigation_developer) {
             Toast.makeText(this, "Developer", Toast.LENGTH_SHORT).show();
         } else if (itemId == R.id.navigation_video) {
-            Intent intent = new Intent(UserActivity.this, FacultyCourses.class);
+            Intent intent = new Intent(UserActivity.this, EnrollCourse.class);
             startActivity(intent);
-            Toast.makeText(this, "Video Lecture", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Courses Open", Toast.LENGTH_SHORT).show();
         } else if (itemId == R.id.navigation_rate) {
             Toast.makeText(this, "Rate Us", Toast.LENGTH_SHORT).show();
         } else if (itemId == R.id.navigation_ebook) {

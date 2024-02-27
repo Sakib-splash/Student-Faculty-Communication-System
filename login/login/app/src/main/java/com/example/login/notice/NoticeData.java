@@ -3,7 +3,8 @@ package com.example.login.notice;
 
 public class NoticeData {
     String title, image, date, time, key;
-
+    private String courseName;
+    private String forBatch;
     public NoticeData() {
     }
 
@@ -53,5 +54,21 @@ public class NoticeData {
 
     public void setKey(String key) {
         this.key = key;
+    }
+
+    public String getCourseName() {
+        return courseName;
+    }
+
+    public void setCourseName(String courseName) {
+        this.courseName = courseName;
+    }
+
+    public String getForBatch() {
+        return forBatch;
+    }
+
+    public void setForBatch(String forBatch) {
+        this.forBatch = forBatch;
     }
 }
