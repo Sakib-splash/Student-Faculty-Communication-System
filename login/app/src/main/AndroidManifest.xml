@@ -16,6 +16,30 @@
         android:theme="@style/Theme.Login"
         tools:targetApi="31">
         <activity
+            android:name=".UploadOnCourse"
+            android:exported="false" />
+        <activity
+            android:name=".EnrollRequest"
+            android:exported="false" />
+        <activity
+            android:name=".EnrollCourse"
+            android:exported="false" />
+        <activity
+            android:name=".RequestPermission"
+            android:exported="false" />
+        <activity
+            android:name=".LoginActivityFaculty"
+            android:exported="false" />
+        <activity
+            android:name=".FacultyCourses"
+            android:exported="false" />
+        <activity
+            android:name=".Faculty_home"
+            android:exported="false" />
+        <activity
+            android:name=".Create_Course"
+            android:exported="false" />
+        <activity
             android:name=".UserActivity"
             android:exported="false" />
         <activity

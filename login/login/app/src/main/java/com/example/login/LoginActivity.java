@@ -37,11 +37,14 @@ public class LoginActivity extends AppCompatActivity {
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(!validateUsername() | !validatePassword()){
-
-                }else{
-                    checkUser();
-                }
+//                if(!validateUsername() | !validatePassword()){
+//
+//                }else{
+//                    checkUser();
+//                }
+                //just for check
+                Intent intent = new Intent(LoginActivity.this, home_page.class);
+                startActivity(intent);
             }
         });
         signupRedirectText.setOnClickListener(new View.OnClickListener() {
@@ -94,7 +97,7 @@ public class LoginActivity extends AppCompatActivity {
 
                     if(!Objects.equals(passwordFromDB, userPassword)){
                         loginUsername.setError(null);
-                        Intent intent = new Intent(LoginActivity.this, UserActivity.class);
+                        Intent intent = new Intent(LoginActivity.this, home_page.class);
                         startActivity(intent);
                     }else{
                         loginPassword.setError("Invalid Credentials!");

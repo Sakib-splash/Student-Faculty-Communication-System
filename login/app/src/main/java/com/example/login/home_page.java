@@ -7,6 +7,7 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
 
 import com.example.login.faculty.UpdateFaculty;
 import com.example.login.notice.DeleteNoticeActivity;
@@ -14,48 +15,22 @@ import com.example.login.notice.UploadNotice;
 
 public class home_page extends AppCompatActivity {
 
-    CardView uploadNotice,addGalleryImage,addEbook, faculty, deleteNotice;
+    CardView create_course,my_courses,deleteNotice;
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_page);
 
-        uploadNotice = findViewById(R.id.addNotice);
-        addGalleryImage = findViewById(R.id.addGalleryImage);
-        addEbook = findViewById(R.id.addEbook);
-        faculty = findViewById(R.id.faculty);
+
         deleteNotice = findViewById(R.id.deleteNotice);
+        create_course = findViewById(R.id.create_course);
+        my_courses = findViewById(R.id.my_courses);
 
-        uploadNotice.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(home_page.this, UploadNotice.class);
-                startActivity(intent);
-            }
-        });
 
-        addGalleryImage.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(home_page.this,UploadImage.class);
-                startActivity(intent);
-            }
-        });
-        addEbook.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(home_page.this,UploadPdfActivity.class);
-                startActivity(intent);
-            }
-        });
-        faculty.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(home_page.this, UpdateFaculty.class);
-                startActivity(intent);
-            }
-        });
+
+
+
         deleteNotice.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -63,6 +38,24 @@ public class home_page extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        create_course.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(home_page.this, Create_Course.class);
+                startActivity(intent);
+            }
+        });
+
+        my_courses.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(home_page.this, FacultyCourses.class);
+                startActivity(intent);
+            }
+        });
+
+
 
     }
 }

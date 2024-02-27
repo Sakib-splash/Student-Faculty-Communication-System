@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="4dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="@dimen/text_margin"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.5"
+                android:paddingLeft="12dp"
+                android:orientation="vertical"
+                android:gravity="center_vertical" >
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/teacherName"
+                    android:text="Dr. Sajeeb Saha"
+                    android:textColor="@color/textColor"
+                    android:textSize="@dimen/title_size"
+                    android:fontFamily="@string/regular"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/teacherPost"
+                    android:text="Course Co-Ordinator"
+                    android:textColor="@color/textColor"
+                    android:textSize="@dimen/title_size"
+                    android:fontFamily="@string/regular"
+                    />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/teacherEmail"
+                    android:text="sajeebsaha@cse.jnu.ac.bd"
+                    android:textColor="@color/textColor"
+                    android:textSize="@dimen/text_size"
+                    android:fontFamily="@string/regular"/>
+
+
+
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/teacherImage"
+                android:layout_width="80dp"
+                android:layout_height="120dp"
+
+                android:src="@drawable/avatarprofile"
+                android:layout_gravity="center_horizontal"
+                android:layout_weight="0.5"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>

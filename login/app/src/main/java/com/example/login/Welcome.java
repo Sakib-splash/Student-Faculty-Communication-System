@@ -18,18 +18,18 @@ public class Welcome extends AppCompatActivity {
         setContentView(R.layout.activity_welcome);
         Student = findViewById(R.id.student_button);
         Faculty=findViewById(R.id.faculty_button);
-        Student.setOnClickListener(new View.OnClickListener() {
+        Faculty.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Welcome.this,LoginActivity.class);
+                Intent intent = new Intent(Welcome.this,LoginActivityFaculty.class);
                 startActivity(intent);
             }
         });
 
-        Faculty.setOnClickListener(new View.OnClickListener() {
+        Student.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Welcome.this, UserActivity.class);
+                Intent intent = new Intent(Welcome.this, LoginActivity.class);
                 startActivity(intent);
             }
         });

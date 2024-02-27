@@ -54,8 +54,8 @@
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
-                android:text="Student"
-                android:id="@+id/student_button"
+                android:text="Faculty"
+                android:id="@+id/faculty_button"
                 android:textSize="18sp"
                 android:layout_marginTop="30dp"
                 app:cornerRadius = "20dp"/>
@@ -64,8 +64,8 @@
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
-                android:text="Faculty"
-                android:id="@+id/faculty_button"
+                android:text="Student"
+                android:id="@+id/student_button"
                 android:textSize="18sp"
                 android:layout_marginTop="30dp"
                 app:cornerRadius = "20dp"/>

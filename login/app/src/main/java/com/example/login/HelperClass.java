@@ -1,10 +1,29 @@
 package com.example.login;
 
 public class HelperClass {
-    String name, email, username, password;
+    String name, email, username, password, userid,StudentEmail,StudentId,uid;
 
     public String getName() {
         return name;
+    }
+
+    public HelperClass(String userid) {
+        this.userid = userid;
+    }
+
+    public HelperClass(String StudentEmail,String StudentId,String uid){
+        this.StudentEmail=StudentEmail;
+        this.StudentId=StudentId;
+        this.uid=uid;
+
+    }
+
+    public String getUserid() {
+        return userid;
+    }
+
+    public void setUserid(String userid) {
+        this.userid = userid;
     }
 
     public void setName(String name) {
@@ -25,6 +44,30 @@ public class HelperClass {
 
     public void setUsername(String username) {
         this.username = username;
+    }
+
+    public String getStudentEmail() {
+        return StudentEmail;
+    }
+
+    public void setStudentEmail(String studentEmail) {
+        StudentEmail = studentEmail;
+    }
+
+    public void setStudentId(String studentId) {
+        StudentId = studentId;
+    }
+
+    public void setUid(String uid) {
+        this.uid = uid;
+    }
+
+    public String getStudentId() {
+        return StudentId;
+    }
+
+    public String getUid() {
+        return uid;
     }
 
     public String getPassword() {

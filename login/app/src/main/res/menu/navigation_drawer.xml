@@ -2,7 +2,7 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item android:id="@+id/navigation_video"
-        android:title="Video Lectures"
+        android:title="Enroll Courses"
         android:icon="@drawable/ic_video"/>
 
     <item android:id="@+id/navigation_ebook"

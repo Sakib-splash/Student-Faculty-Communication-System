@@ -1,40 +1,33 @@
 package com.example.login;
 
+import static com.example.login.R.id.addNotice;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-import com.example.login.faculty.UpdateFaculty;
-import com.example.login.notice.DeleteNoticeActivity;
-import com.example.login.notice.UploadNotice;
+
 
 public class home_page extends AppCompatActivity {
 
-    CardView uploadNotice,addGalleryImage,addEbook, faculty, deleteNotice,create_course,my_courses;
-    @SuppressLint("MissingInflatedId")
+    CardView uploadNotice,addGalleryImage,addEbook,faculty;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_page);
 
-        uploadNotice = findViewById(R.id.addNotice);
+        uploadNotice = findViewById(addNotice);
         addGalleryImage = findViewById(R.id.addGalleryImage);
         addEbook = findViewById(R.id.addEbook);
         faculty = findViewById(R.id.faculty);
-        deleteNotice = findViewById(R.id.deleteNotice);
-        create_course = findViewById(R.id.create_course);
-        my_courses = findViewById(R.id.my_courses);
-
-
 
         uploadNotice.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(home_page.this, UploadNotice.class);
+                Intent intent = new Intent(home_page.this,UploadNotice.class);
                 startActivity(intent);
             }
         });
@@ -53,36 +46,12 @@ public class home_page extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        faculty.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(home_page.this, UpdateFaculty.class);
-                startActivity(intent);
-            }
-        });
-        deleteNotice.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(home_page.this, DeleteNoticeActivity.class);
-                startActivity(intent);
-            }
-        });
-
-        create_course.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(home_page.this, Create_Course.class);
-                startActivity(intent);
-            }
-        });
-
-        my_courses.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(home_page.this, FacultyCourses.class);
-                startActivity(intent);
-            }
-        });
-
+//        faculty.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent(home_page.this, UpdateFaculty.class);
+//                startActivity(intent);
+//            }
+//        });
     }
 }

@@ -22,6 +22,7 @@ import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -63,6 +64,7 @@ public class UploadNotice extends AppCompatActivity {
         noticeTitle = findViewById(R.id.noticeTitle);
         uploadNoticeBtn = findViewById(R.id.uploadNoticeBtn);
 
+
         addImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -89,12 +91,16 @@ public class UploadNotice extends AppCompatActivity {
 
         pd.setMessage("Uploading...");
         pd.show();
+        String currentCourseName = getIntent().getStringExtra("courseName");
 
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
         bitmap.compress(Bitmap.CompressFormat.JPEG, 50,baos);
         byte[] finalimg = baos.toByteArray();
         final StorageReference filePath;
         filePath = storageReference.child("Notice").child(finalimg+"jpg");
+
+
+
         final UploadTask uploadTask = filePath.putBytes(finalimg);
         uploadTask.addOnCompleteListener(UploadNotice.this, new OnCompleteListener<UploadTask.TaskSnapshot>() {
             @Override
@@ -107,6 +113,8 @@ public class UploadNotice extends AppCompatActivity {
                                 @Override
                                 public void onSuccess(Uri uri) {
                                     downloadUrl= String.valueOf(uri);
+
+                                    Log.d("Download ready", "url is: "+downloadUrl);
                                     uploadData();
                                 }
                             });
@@ -121,7 +129,14 @@ public class UploadNotice extends AppCompatActivity {
     }
 
     private void uploadData() {
-        dbRef = reference.child("Notice");
+
+
+        String currentCourseName = getIntent().getStringExtra("courseName");
+
+        dbRef = reference.child("Classes").child(currentCourseName);
+
+
+
         final String uniqueKey = dbRef.push().getKey();
 
         String title = noticeTitle.getText().toString();
@@ -133,7 +148,7 @@ public class UploadNotice extends AppCompatActivity {
         Calendar calForTime = Calendar.getInstance();
         SimpleDateFormat currentTime = new SimpleDateFormat("hh:mm a");
         String time = currentTime.format(calForTime.getTime());
-        NoticeData noticeData = new NoticeData(title,downloadUrl,date,time,uniqueKey);
+        NoticeData noticeData = new NoticeData(title, downloadUrl, date, time, uniqueKey);
 
         dbRef.child(uniqueKey).setValue(noticeData).addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override
