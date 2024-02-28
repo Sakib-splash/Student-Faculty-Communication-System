@@ -81,7 +81,9 @@ public class UserActivity extends AppCompatActivity implements NavigationView.On
             startActivity(intent);
             Toast.makeText(this, "Searching Courses", Toast.LENGTH_SHORT).show();
         } else if (itemId == R.id.navigation_theme) {
-            Toast.makeText(this, "Theme", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(UserActivity.this, StudentHome.class);
+            startActivity(intent);
+            Toast.makeText(this, "Return Home Page", Toast.LENGTH_SHORT).show();
         } else if (itemId == R.id.navigation_website) {
             Toast.makeText(this, "Website", Toast.LENGTH_SHORT).show();
         } else if (itemId == R.id.navigation_share) {

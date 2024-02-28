@@ -10,7 +10,7 @@
         android:icon="@drawable/ic_ebook"/>
 
     <item android:id="@+id/navigation_theme"
-        android:title="Themes"
+        android:title="Back to Home"
         android:icon="@drawable/ic_theme"/>
 
     <item android:id="@+id/navigation_website"

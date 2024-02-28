@@ -29,7 +29,7 @@ public class NoticeAdapter extends RecyclerView.Adapter<NoticeAdapter.NoticeView
     private Context context;
     private ArrayList<NoticeData> list;
 
-    public NoticeAdapter(Context context, ArrayList<NoticeData> list) {
+    public NoticeAdapter(Context context, ArrayList<NoticeData> list, String currentCourseName) {
         this.context = context;
         this.list = list;
     }

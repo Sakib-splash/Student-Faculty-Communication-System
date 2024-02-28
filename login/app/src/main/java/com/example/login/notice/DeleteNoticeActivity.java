@@ -18,7 +18,6 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class DeleteNoticeActivity extends AppCompatActivity {
 
@@ -56,7 +55,7 @@ public class DeleteNoticeActivity extends AppCompatActivity {
                     NoticeData data = snapshot.getValue(NoticeData.class);
                     list.add(data);
                 }
-                adapter = new NoticeAdapter(DeleteNoticeActivity.this, list);
+                adapter = new NoticeAdapter(DeleteNoticeActivity.this, list, currentCourseName);
                 adapter.notifyDataSetChanged();
                 progressBar.setVisibility(View.GONE);
                 deleteNoticeRecycler.setAdapter(adapter);

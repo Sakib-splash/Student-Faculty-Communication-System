@@ -97,7 +97,9 @@ public class SignupFacultyActivity extends AppCompatActivity {
             public void onComplete(@NonNull Task task) {
                 if(task.isSuccessful()){
                     Intent intent = new Intent(SignupFacultyActivity.this, LoginActivityFaculty.class);
+
                     startActivity(intent);
+
 
 //                    databaseReference = FirebaseDatabase.getInstance().getReference().child("Users");
 

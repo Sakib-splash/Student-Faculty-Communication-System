@@ -1,18 +1,18 @@
 package com.example.login.ui.notice;
 
+public class NoticeData {
+    String title, image, date, time, key, courseName;  // Added courseName field
 
-public class noticeData {
-    String title, image, date, time, key;
-
-    public noticeData() {
+    public NoticeData() {
     }
 
-    public noticeData(String title, String image, String date, String time, String key) {
+    public NoticeData(String title, String image, String date, String time, String key, String courseName) {
         this.title = title;
         this.image = image;
         this.date = date;
         this.time = time;
         this.key = key;
+        this.courseName = courseName;
     }
 
     public String getTitle() {
@@ -53,5 +53,13 @@ public class noticeData {
 
     public void setKey(String key) {
         this.key = key;
+    }
+
+    public String getCourseName() {
+        return courseName;
+    }
+
+    public void setCourseName(String courseName) {
+        this.courseName = courseName;
     }
 }
